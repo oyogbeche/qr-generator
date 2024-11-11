@@ -11,9 +11,12 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
       - name: build image
-        run: docker build -t oyogbeche/qrcode-backend:latest ./api/
+        run: |
+          docker build -t oyogbeche/qrcode-backend:latest ./api/
+          docker build -t oyogbeche/qrcode-frontend:latest ./front-end-nextjs/
       - name: docker push
         run: |
           docker login -u oyogbeche -p ${{secrets.DOCKERHUB_TOKEN}}
           docker push oyogbeche/qrcode-backend:latest 
+          docker push oyogbeche/qrcode-frontend:latest
 
