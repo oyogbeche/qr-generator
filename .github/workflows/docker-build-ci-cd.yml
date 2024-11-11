@@ -1,6 +1,8 @@
 name: docker build image and push
 on:
-  webflow-dispatch
+  push:
+    branches:
+      - oyogbeche
 
 jobs:
   push_images:
