@@ -1,6 +1,6 @@
 name: docker build image and push
 on:
-  [webflow_dispatch]
+  webflow-dispatch
 
 jobs:
   push_images:
