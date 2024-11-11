@@ -14,5 +14,5 @@ jobs:
         run: docker build -t oyogbeche/qr-code-backend:latest ./api/
       - name: docker push
         run: |
-          docker push oyogbeche/qrcode-backend:latest 
+          docker push oyogbeche/qr-code-backend:latest 
 
