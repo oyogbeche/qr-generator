@@ -1,0 +1,16 @@
+name: docker build image and push
+on:
+  [webflow_dispatch]
+
+jobs:
+  push_images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: build image
+        run: docker build -t oyogbeche/qr-code-backend:latest ./api/
+      - name: docker push
+        run: |
+          docker push oyogbeche/qrcode-backend:latest 
+
